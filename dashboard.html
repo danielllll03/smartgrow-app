@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Overview - SmartGrow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🌱</div>
+            <div>
+                <div class="logo-text">SmartGrow</div>
+                <div class="logo-sub">Pedoman Nutrisi & Tumbuh Anak</div>
+            </div>
+        </div>
+
+        <div class="user-sidebar-card">
+            <div class="user-avatar">BP</div>
+            <div class="user-info">
+                <h4>Bunda Putri</h4>
+                <p id="displayNamaAnakSub">Ibu dari Budi (2 Thn)</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+    <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span> Dashboard</a></li>
+    <li class="nav-item"><a href="data-anak.html" class="nav-link"><span class="nav-icon">👶</span> Data Fisik Anak</a></li>
+    <li class="nav-item"><a href="analisis.html" class="nav-link"><span class="nav-icon">🤖</span> Analisis Tumbuh</a></li>
+    <li class="nav-item"><a href="malnutrisi.html" class="nav-link"><span class="nav-icon">🚨</span> Monitoring Nutrisi</a></li>
+    <li class="nav-item"><a href="chatbot.html" class="nav-link"><span class="nav-icon">💬</span> Konsultasi AI</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link"><span class="nav-icon">🍽️</span> Menu Harian</a></li>
+    <li class="nav-item"><a href="jadwal.html" class="nav-link"><span class="nav-icon">📅</span> Jadwal Imunisasi</a></li>
+    <li class="nav-item"><a href="laporan.html" class="nav-link"><span class="nav-icon">📈</span> Laporan Medis</a></li>
+    <li class="nav-item"><a href="pengaturan.html" class="nav-link"><span class="nav-icon">⚙️</span> Pengaturan</a></li>
+</ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>Dashboard Overview</h1>
+                <p>Ringkasan kondisi kesehatan dan catatan tumbuh kembang si Kecil</p>
+            </div>
+            <a href="chatbot.html" class="header-btn">💬 Tanya Dokter AI</a>
+        </header>
+
+        <!-- Banner Hijau UI Baru -->
+        <div class="hero-banner">
+            <div class="banner-badge">✨ Rangkuman Kesehatan Terupdate</div>
+            <h2>Selamat Datang Kembali, Bunda! 👋</h2>
+            <p>Si Kecil berada dalam rentang pertumbuhan <strong style="color:white;">Optimal (Sangat Baik)</strong> untuk anak seusianya. Tetap jaga asupan nutrisi harian dan pola tidur secara teratur.</p>
+            <div class="banner-actions">
+                <a href="data-anak.html" class="btn-white">✏️ Update Data Fisik</a>
+                <a href="jadwal.html" class="btn-trans">📅 Cek Agenda Imunisasi</a>
+            </div>
+        </div>
+
+        <!-- Metric Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">USIA SAAT INI</span>
+                    <div class="stat-icon-circle" style="background: #e0f2fe; color: #0284c7;">🎂</div>
+                </div>
+                <div class="stat-value" id="dashUmur">24 Bulan</div>
+                <div class="stat-subtext">
+                    <span style="color:#059669;">✓</span> Tumbuh kembang masa balita
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">TINGGI BADAN</span>
+                    <div class="stat-icon-circle" style="background: #d1fae5; color: #059669;">📏</div>
+                </div>
+                <div class="stat-value" id="dashTB">87.5 cm</div>
+                <div class="stat-subtext">
+                    <span style="color:#059669;">📈 Dalam kurva WHO</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">BERAT BADAN</span>
+                    <div class="stat-icon-circle" style="background: #e0e7ff; color: #4338ca;">⚖️</div>
+                </div>
+                <div class="stat-value" id="dashBB">12.3 kg</div>
+                <div class="stat-subtext">
+                    <span style="color:#059669;">🛡️ Indeks Massa Seimbang</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-header">
+                <h2 class="section-title">Aksi Cepat Menu</h2>
+            </div>
+            <div style="display: flex; gap: 12px;">
+                <a href="chatbot.html" class="btn-primary" style="text-decoration:none;">💬 Mulai Konsultasi AI</a>
+                <a href="menu.html" class="btn-primary" style="background:#0284c7; text-decoration:none;">🍽️ Lihat Menu Harian</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengaturan & Profil - SmartGrow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🌱</div>
+            <div>
+                <div class="logo-text">SmartGrow</div>
+                <div class="logo-sub">Pedoman Nutrisi & Tumbuh Anak</div>
+            </div>
+        </div>
+
+        <div class="user-sidebar-card">
+            <div class="user-avatar">BP</div>
+            <div class="user-info">
+                <h4>Bunda Putri</h4>
+                <p id="displayNamaAnakSub">Ibu dari Budi (2 Thn)</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span> Dashboard</a></li>
+                <li class="nav-item"><a href="data-anak.html" class="nav-link"><span class="nav-icon">👶</span> Data Fisik Anak</a></li>
+                <li class="nav-item"><a href="analisis.html" class="nav-link"><span class="nav-icon">🤖</span> Analisis Tumbuh</a></li>
+                <li class="nav-item"><a href="malnutrisi.html" class="nav-link"><span class="nav-icon">🚨</span> Monitoring Nutrisi</a></li>
+                <li class="nav-item"><a href="chatbot.html" class="nav-link"><span class="nav-icon">💬</span> Konsultasi AI</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link"><span class="nav-icon">🍽️</span> Menu Harian</a></li>
+                <li class="nav-item"><a href="jadwal.html" class="nav-link"><span class="nav-icon">📅</span> Jadwal Imunisasi</a></li>
+                <li class="nav-item"><a href="laporan.html" class="nav-link"><span class="nav-icon">📈</span> Laporan Medis</a></li>
+                <li class="nav-item"><a href="pengaturan.html" class="nav-link active"><span class="nav-icon">⚙️</span> Pengaturan</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>Pengaturan & Profil Akun</h1>
+                <p>Kelola informasi profil orang tua dan preferensi sesi aplikasi</p>
+            </div>
+        </header>
+
+        <div class="card" style="max-width: 700px; margin-bottom: 24px;">
+            <div class="section-header">
+                <div class="section-icon">👤</div>
+                <h2 class="section-title">Profil Pengguna & Akun</h2>
+            </div>
+            
+            <form class="input-form" onsubmit="handleSaveProfile(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap Orang Tua / Wali</label>
+                    <input type="text" id="profileNamaOrtu" class="form-input" value="Bunda Putri" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email / Akun Terdaftar</label>
+                    <input type="email" id="profileEmail" class="form-input" value="nieltjandrawan2@gmail.com" readonly style="background: #f1f5f9; cursor: not-allowed;">
+                    <small style="color: #64748b; font-size: 0.75rem; margin-top: 4px; display: block;">Email disinkronkan otomatis dengan kredensial Google AI Studio Anda.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor Telepon / WhatsApp</label>
+                    <input type="text" id="profilePhone" class="form-input" placeholder="Contoh: 081234567890">
+                </div>
+
+                <button type="submit" class="btn-primary" style="margin-top: 8px;">💾 Simpan Perubahan Profil</button>
+            </form>
+        </div>
+
+        <div class="card" style="max-width: 700px; margin-bottom: 24px;">
+            <div class="section-header">
+                <div class="section-icon">🔒</div>
+                <h2 class="section-title">Keamanan & Sesi Login</h2>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 16px; line-height: 1.5;">
+                Aplikasi ini berjalan secara lokal di perangkat Anda menggunakan penyimpanan terenkripsi browser. Anda dapat mengakhiri sesi atau menghapus data cache kapan saja.
+            </p>
+            
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <button onclick="handleSimulasiLogout()" style="padding: 10px 18px; background: #fef3c7; color: #d97706; border: 1px solid #fde68a; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.88rem;">
+                    🔒 Keluar (Logout Sesi)
+                </button>
+                <button onclick="resetApp()" style="padding: 10px 18px; background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.88rem;">
+                    🗑️ Hapus Memori & Reset Total
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function handleSaveProfile(e) {
+            e.preventDefault();
+            const namaOrtu = document.getElementById('profileNamaOrtu').value;
+            const phone = document.getElementById('profilePhone').value;
+            
+            localStorage.setItem('sg_nama_ortu', namaOrtu);
+            localStorage.setItem('sg_phone_ortu', phone);
+            
+            alert('Profil berhasil diperbarui!');
+            window.location.reload();
+        }
+
+        function handleSimulasiLogout() {
+            if(confirm("Apakah Anda ingin mengakhiri sesi saat ini?")) {
+                localStorage.removeItem('sg_session_active');
+                alert('Sesi berhasil diakhiri.');
+                window.location.reload();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedNama = localStorage.getItem('sg_nama_ortu');
+            const savedPhone = localStorage.getItem('sg_phone_ortu');
+            if(savedNama) document.getElementById('profileNamaOrtu').value = savedNama;
+            if(savedPhone) document.getElementById('profilePhone').value = savedPhone;
+        });
+    </script>
+</body>
+</html>

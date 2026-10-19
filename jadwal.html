@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jadwal Imunisasi - SmartGrow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo"><div class="logo-icon">🌱</div><div><div class="logo-text">SmartGrow</div><div class="logo-sub">Pedoman Nutrisi & Tumbuh Anak</div></div></div>
+        <div class="user-sidebar-card"><div class="user-avatar">BP</div><div class="user-info"><h4>Bunda Putri</h4><p id="displayNamaAnakSub">Ibu dari Budi (2 Thn)</p></div></div>
+        <ul class="nav-menu">
+    <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span> Dashboard</a></li>
+    <li class="nav-item"><a href="data-anak.html" class="nav-link"><span class="nav-icon">👶</span> Data Fisik Anak</a></li>
+    <li class="nav-item"><a href="analisis.html" class="nav-link"><span class="nav-icon">🤖</span> Analisis Tumbuh</a></li>
+    <li class="nav-item"><a href="malnutrisi.html" class="nav-link"><span class="nav-icon">🚨</span> Monitoring Nutrisi</a></li>
+    <li class="nav-item"><a href="chatbot.html" class="nav-link"><span class="nav-icon">💬</span> Konsultasi AI</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link"><span class="nav-icon">🍽️</span> Menu Harian</a></li>
+    <li class="nav-item"><a href="jadwal.html" class="nav-link"><span class="nav-icon">📅</span> Jadwal Imunisasi</a></li>
+    <li class="nav-item"><a href="laporan.html" class="nav-link"><span class="nav-icon">📈</span> Laporan Medis</a></li>
+    <li class="nav-item"><a href="pengaturan.html" class="nav-link"><span class="nav-icon">⚙️</span> Pengaturan</a></li>
+</ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="header"><div class="header-left"><h1>Jadwal & Agenda Kesehatan</h1><p>Pengingat kalender imunisasi dan penimbangan Posyandu</p></div></header>
+
+        <div class="dashboard-grid">
+            <div class="wrapper-calendar">
+                <header class="calendar-header">
+                    <p class="current-date" style="font-weight:700;"></p>
+                    <div class="icons" style="cursor:pointer;"><span id="prev" style="margin-right:10px;"><i class="fas fa-chevron-left"></i></span><span id="next"><i class="fas fa-chevron-right"></i></span></div>
+                </header>
+                <div class="calendar"><ul class="weeks"><li>Min</li><li>Sen</li><li>Sel</li><li>Rab</li><li>Kam</li><li>Jum</li><li>Sab</li></ul><ul class="days"></ul></div>
+            </div>
+
+            <div class="card">
+                <div class="section-header"><h2 class="section-title" id="selectedDateLabel">Pilih Tanggal</h2></div>
+                <div id="eventList" style="margin-bottom:16px;"></div>
+                <div class="form-group"><input type="text" id="eventInput" class="form-input" placeholder="Imunisasi DPT..." style="margin-bottom:8px;"><button onclick="addEvent()" class="btn-primary" style="width:100%;">+ Tambah Agenda</button></div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

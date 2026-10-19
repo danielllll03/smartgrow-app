@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Fisik Anak - SmartGrow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo"><div class="logo-icon">🌱</div><div><div class="logo-text">SmartGrow</div><div class="logo-sub">Pedoman Nutrisi & Tumbuh Anak</div></div></div>
+        <div class="user-sidebar-card"><div class="user-avatar">BP</div><div class="user-info"><h4>Bunda Putri</h4><p id="displayNamaAnakSub">Ibu dari Budi (2 Thn)</p></div></div>
+        <ul class="nav-menu">
+    <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span> Dashboard</a></li>
+    <li class="nav-item"><a href="data-anak.html" class="nav-link"><span class="nav-icon">👶</span> Data Fisik Anak</a></li>
+    <li class="nav-item"><a href="analisis.html" class="nav-link"><span class="nav-icon">🤖</span> Analisis Tumbuh</a></li>
+    <li class="nav-item"><a href="malnutrisi.html" class="nav-link"><span class="nav-icon">🚨</span> Monitoring Nutrisi</a></li>
+    <li class="nav-item"><a href="chatbot.html" class="nav-link"><span class="nav-icon">💬</span> Konsultasi AI</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link"><span class="nav-icon">🍽️</span> Menu Harian</a></li>
+    <li class="nav-item"><a href="jadwal.html" class="nav-link"><span class="nav-icon">📅</span> Jadwal Imunisasi</a></li>
+    <li class="nav-item"><a href="laporan.html" class="nav-link"><span class="nav-icon">📈</span> Laporan Medis</a></li>
+    <li class="nav-item"><a href="pengaturan.html" class="nav-link"><span class="nav-icon">⚙️</span> Pengaturan</a></li>
+</ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left"><h1>Data Fisik Anak</h1><p>Pembaruan ukuran fisik untuk perhitungan kurva WHO</p></div>
+        </header>
+
+        <div class="card" style="max-width: 600px;">
+            <form class="input-form" onsubmit="handleSaveData(event)">
+                <div class="form-group"><label>Nama Panggilan Anak</label><input type="text" id="inputNama" class="form-input" placeholder="Budi" required></div>
+                <div class="form-group"><label>Tanggal Lahir</label><input type="date" id="inputLahir" class="form-input" required></div>
+                <div style="display:flex; gap:16px;">
+                    <div class="form-group" style="flex:1;"><label>Tinggi Badan (cm)</label><input type="number" id="inputTB" class="form-input" placeholder="87.5" step="0.1" required></div>
+                    <div class="form-group" style="flex:1;"><label>Berat Badan (kg)</label><input type="number" id="inputBB" class="form-input" placeholder="12.3" step="0.1" required></div>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; margin-top:12px;">💾 Simpan & Perbarui AI</button>
+            </form>
+        </div>
+
+        <div style="max-width:600px;">
+            <button onclick="resetApp()" style="width:100%; padding:12px; background:#fef2f2; color:#dc2626; border:1px solid #fecaca; border-radius:12px; font-weight:700; cursor:pointer;">🗑️ Reset Data & Mulai Nol</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
